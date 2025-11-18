@@ -60,7 +60,7 @@
         }
 
         function App(){
-          const ChatMessage = [{
+          const ChatMessages = [{
             message: "hello chatbot",
             sender: "user"
           }, {
@@ -74,19 +74,19 @@
             sender: "robot"
           }];
 
-          const chatMessageComponents = ChatMessages.map((chatMessage) => {
-            return(
-              <ChatMessage 
-              message={chatMessage.message} 
-              sender={chatMessage.sender} 
-            />  
-            );
-            
-          });
+
           return (
             <>
               <ChatInput />
-              {chatMessageComponents}
+              {ChatMessages.map((chatMessage) => {
+                return(
+                  <ChatMessage 
+                  message={chatMessage.message} 
+                  sender={chatMessage.sender} 
+                />  
+                );
+                
+              })}
             </>
           );
         };
